@@ -1,0 +1,67 @@
+/* gruvbox light, contrast: hard */
+:root {
+  color-scheme: light;
+
+  --bg0-h: #f9f5d7;
+  --bg0:   #fbf1c7;
+  --bg0-s: #f2e5bc;
+  --bg1:   #ebdbb2;
+  --bg2:   #d5c4a1;
+  --bg3:   #bdae93;
+  --bg4:   #a89984;
+
+  --fg0: #282828;
+  --fg1: #3c3836;
+  --fg2: #504945;
+  --fg3: #665c54;
+  --fg4: #7c6f64;
+  --gray: #928374;
+
+  --red:    #9d0006;
+  --green:  #79740e;
+  --yellow: #b57614;
+  --blue:   #076678;
+  --purple: #8f3f71;
+  --aqua:   #427b58;
+  --orange: #af3a03;
+
+  --bg: var(--bg0-h);
+  --fg: var(--fg1);
+  --muted: var(--fg4);
+  --accent: var(--blue);
+  --border: var(--bg2);
+
+  --font-mono: "Iosevka", "Cascadia Code", monospace;
+  --font-body: var(--font-mono);
+  --font-size: 16px;
+
+  --measure: 100ch;
+}
+
+/* gruvbox dark, contrast: hard (same names, so semantic tokens above carry over) */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg0-h: #1d2021;
+  --bg0:   #282828;
+  --bg0-s: #32302f;
+  --bg1:   #3c3836;
+  --bg2:   #504945;
+  --bg3:   #665c54;
+  --bg4:   #7c6f64;
+
+  --fg0: #fbf1c7;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+  --gray: #928374;
+
+  --red:    #fb4934;
+  --green:  #b8bb26;
+  --yellow: #fabd2f;
+  --blue:   #83a598;
+  --purple: #d3869b;
+  --aqua:   #8ec07c;
+  --orange: #fe8019;
+}

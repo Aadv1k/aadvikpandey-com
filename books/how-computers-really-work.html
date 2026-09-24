@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A compendium of How Computers Really Work (WIP)</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
+<link rel="manifest" href="../favicon/site.webmanifest">
+<link rel="stylesheet" href="../styles/index.css">
+<script src="../scripts/theme.js"></script>
+
+<nav>
+<a href="../">home</a>
+<a href="../about.html">about</a>
+<a href="../write-ups/">write-ups</a>
+<button id="themeBtn"></button>
+</nav>
+
+<article>
+<header>
+<h1>A compendium of How Computers Really Work (WIP)</h1>
+<time datetime="2022-08-25">2022-08-25</time>
+</header>
+
+<p class="muted"><i>Notes on <a href="https://nostarch.com/how-computers-really-work">How Computers Really Work</a> by Matthew Justice (No Starch Press, 2020). Chapter summaries in my own words, plus the sums and notes I worked through while reading. Unfinished.</i></p>
+
+<h2>Chapter 1: Computing concepts</h2>
+
+<p>Analog systems represent a value by something proportional to it, like a scale's needle or mercury in a thermometer. Digital systems represent data as a sequence of symbols from a small fixed set, and in computers that set is just 0 and 1, because two symbols keep the hardware simple and reliable.</p>
+
+<table>
+<tr><th>Prefix</th><th>Symbol</th><th>Base 10</th><th>English word</th></tr>
+<tr><td>tera</td><td>T</td><td>10<sup>12</sup></td><td>trillion</td></tr>
+<tr><td>giga</td><td>G</td><td>10<sup>9</sup></td><td>billion</td></tr>
+<tr><td>mega</td><td>M</td><td>10<sup>6</sup></td><td>million</td></tr>
+<tr><td>kilo</td><td>k</td><td>10<sup>3</sup></td><td>thousand</td></tr>
+<tr><td>centi</td><td>c</td><td>10<sup>-2</sup></td><td>hundredth</td></tr>
+<tr><td>milli</td><td>m</td><td>10<sup>-3</sup></td><td>thousandth</td></tr>
+<tr><td>micro</td><td>μ</td><td>10<sup>-6</sup></td><td>millionth</td></tr>
+<tr><td>nano</td><td>n</td><td>10<sup>-9</sup></td><td>billionth</td></tr>
+<tr><td>pico</td><td>p</td><td>10<sup>-12</sup></td><td>trillionth</td></tr>
+</table>
+
+<p>ISPs advertise in bits per second (base 10), so 50 megabits per second is about 6 megabytes per second.</p>
+
+<p>Hexadecimal is base 16, using 0 to 9 and then A to F for ten to fifteen. It exists because long runs of bits are hard for people to read, and each hex digit maps to exactly four bits.</p>
+
+<p>Hexadecimal is base 16: Ones – 16; Tens – 256; Hundreds – 4096</p>
+
+<p>SUMS:</p>
+
+<pre>467b -> 11 + (7*16) = 112 + (256*6) = 1536 + 16384 = 1659 + 16384 = 18043 = 0100 0110 0011 1011
+ad48 -> 8 + 64 + 208 + 2560 = 2848
+a8f4 -> 4 + 240 + 2048 + 40960 = 43252</pre>
+
+<h2>Chapter 2: Binary logic and encoding</h2>
+
+<p>Encoding is turning data into bits, and decoding is interpreting them. The same bits mean different things depending on the program reading them: text, a pixel's colour, or a number. Logic operators (AND, OR, NOT, and derived ones like NAND and XOR) combine true and false values.</p>
+
+<h2>Chapter 3: Electrical circuits</h2>
+
+<p>The book explains circuits with a water analogy: charge is water, a wire is a pipe, voltage is the pressure, and resistance is how narrow the pipe is.</p>
+
+<table>
+<tr><th>Term</th><th>Measured in</th><th>Water analogy</th></tr>
+<tr><td>Electric charge</td><td>Coulombs</td><td>Water</td></tr>
+<tr><td>Electric current</td><td>Amps</td><td>Flow of water through a pipe</td></tr>
+<tr><td>Voltage</td><td>Volts</td><td>Water pressure</td></tr>
+<tr><td>Resistance</td><td>Ohms</td><td>The width of a pipe</td></tr>
+</table>
+
+<p>Ohm's law ties them together:</p>
+
+<pre>I = V / R
+Amps = Volts / Ohms</pre>
+
+<p>AC periodically changes direction and is what comes out of the wall. DC flows one way and is what batteries and phones use. A diode lets current through in only one direction, and an LED is a diode that lights up.</p>
+
+<h2>Chapter 4: Digital circuits</h2>
+
+<pre>Low voltage:  Low, LO, off, ground, GND, false, zero, 0
+High voltage: High, HI, on, V+, true, one, 1</pre>
+
+<p>Mechanical switches can't drive a computer, so transistors act as electronically controlled switches. Logic gates are built from transistors and sold as integrated circuits (chips).</p>
+
+<p>NOTE: FIGURE OUT HOW TRANSISTORS WORK</p>
+
+<h2>Chapter 5: Math with digital circuits</h2>
+
+<p>Binary addition works like decimal addition with carries. A half adder adds two bits and produces a sum and a carry. Chaining full adders gives a ripple carry adder, which gets slower as the carry ripples through more bits.</p>
+
+<pre>To add 0001 + 0010
+The least significant bit (ones)
+0 + 1 = 1
+0 + 1 = 1
+0 + 0 = 0
+The most significant bit
+0 + 0 = 0
+1 + 2 = 3
+
+   0111
++  0011
+1 + 1 = 0 (carry 1)
+1 + 1 = 0 (carry 1)
+1 + 1 = 0 (carry 1)
+1 + 0 = 1 (carry 1)</pre>
+
+<p>Negative numbers are stored in two's complement: flip every bit and add 1. The same adder then works for both positive and negative values. Unsigned numbers skip negatives entirely, doubling the positive range.</p>
+
+<pre>5 -> 0101 (Binary) -> 1010 (Flip) -> 1011 -> -5 (in computing)
+3 -> 0011 -> 1100 -> 1101 -> -3
+0101 + 1101 -> 1 0010 = 3</pre>
+
+<h2>Chapter 6: Memory and clock signals</h2>
+
+<p>Sequential logic depends on past inputs, not just present ones, which is what memory is. An SR latch remembers one bit and can be built from two cross-coupled NOR gates. A clock is a square wave that keeps components changing state together, measured in hertz, and components trigger on either its rising or falling edge.</p>
+
+<h2>Chapter 7: Computer hardware</h2>
+
+<p>Main memory (RAM) is volatile and byte-addressable. SRAM uses flip-flops and is fast but expensive, so it is used for caches. DRAM uses a transistor and a capacitor, needs refreshing, and is cheap enough for main memory. CPUs that share an instruction set architecture run the same software, and today that mostly means x86 or ARM. Inside the CPU, registers hold data, the ALU does the arithmetic and logic, and the control unit directs everything. Pipelining overlaps instructions within a core, multiple cores run separate tasks, and L1, L2 and L3 caches sit between the CPU and main memory.</p>
+
+<p>NOTE: Learn about multi-threading and parallelism</p>
+
+<h2>Chapter 8: Machine code and low-level code</h2>
+
+<p>CPUs execute machine code, while developers write source code in higher-level languages. An instruction in ARM cpu looks something like so</p>
+
+<pre>11100011101000000111000000000100</pre>
+
+<p>1110 – Condition, tells the CPU if the instruction is conditional, in this case it isn't, and it will always run. The opcode here is mov, and the destination register 0111 is r7.</p>
+
+<p>PAUSE – Learn assembly</p>
+</article>

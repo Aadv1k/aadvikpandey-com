@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building an app for my school</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
+<link rel="manifest" href="../favicon/site.webmanifest">
+<link rel="stylesheet" href="../styles/index.css">
+<script src="../scripts/theme.js"></script>
+
+<nav>
+<a href="../">home</a>
+<a href="../about.html">about</a>
+<a href="./">write-ups</a>
+<button id="themeBtn"></button>
+</nav>
+
+<article>
+<header>
+<h1>Building an app for my school</h1>
+<time datetime="2024-11-20">2024-11-20</time>
+</header>
+
+<p>Picture this: it's a fine Saturday morning, it's an off, so the school is unusually serene. Suddenly a 12th grader shows up, starts roaming about the 4th floor and asking the teachers around if it is indeed an off today, because he wasn't informed of this happening.</p>
+
+<p>Well, that was exactly the position I found myself in. After maybe 10 mins of prancing about and eventually finding my class teacher, I came to know it was indeed an off for everyone, and I had no idea about it. After receiving a nice scolding from her for "not checking the school WhatsApp group for announcements", it apparently turned out that I in fact hadn't received any updates on my class WhatsApp group. This was because there had been exactly four distinct class groups. Why, you may ask? Well, I had no clue either.</p>
+
+<p>That is when it hit me; this is a PROBLEM. If I as a student can face these kinds of communication lapses, I really hate to imagine what happens on the teachers' end.</p>
+
+<h2>The problem</h2>
+
+<p>So to me the problem seemed to be that school communications are divided across several small groups. These groups may range from "12th Official Group" to "12C Computer Science Group". Not only does this cause important announcements to be lost, but it is simply annoying to constantly have your phone buzzing with irrelevant chatter.</p>
+
+<h2>The solution</h2>
+
+<p>The solution to this? An announcements app, where announcements find YOU, not the other way around. Essentially with each announcement you can specify who exactly it is for, "12th Standard Students", "Geography Teachers", "Class Teacher of 12C", and it will only be visible and notified to them.</p>
+
+<p>I went ahead and walked into the room of my principal, and asked her to give me 6 months to solve this exact problem. With her support and blessings, I started building.</p>
+
+<h2>Starting too big</h2>
+
+<p>I frankly vastly underestimated the scope of the project. Instead of thinking in terms of an MVP, I began sketching out ideas in my notebook for all the features and screens I wanted in the app: an interactive attendance tracker, an exam management solution and what not.</p>
+
+<p>For the first 4 months, the development was all over the place. I picked Flutter because it was cross-platform (and hey, an excuse to learn a new language!), along with Python and Django on the back-end, but I was still figuring out how to even build an app (coming from a web background, the app UX patterns were completely new to me). Eventually, I realised that I needed an MVP.</p>
+
+<h2>The MVP</h2>
+
+<p>4 months had passed since I had promised the app. The app went from being "unnamed project", to "campuspilot", to now, "Varta". Varta is the Sanskrit word that roughly means <i>to converse</i>, and I knew then that I was solving a VERY specific problem: I was trying to fix broken and scattered communications across my school.</p>
+
+<p>I had to take a step back, and spend some time in the real world, to map out the kinds of communications that were transmitted over the VA (loudspeaker) system of my school.</p>
+
+<h2>And now, for the sizzle reel...</h2>
+
+<figure>
+<img src="building-an-app-for-my-school/demo.gif" alt="Creating, updating and deleting an announcement in Varta" loading="lazy">
+<figcaption>Creating, updating and deleting an announcement.</figcaption>
+</figure>
+
+<div class="shots">
+<img src="building-an-app-for-my-school/varta-scr-1.png" alt="Create an announcement">
+<img src="building-an-app-for-my-school/varta-scr-2.png" alt="Select one or multiple scopes">
+<img src="building-an-app-for-my-school/varta-scr-3.png" alt="Add media or documents as needed">
+<img src="building-an-app-for-my-school/varta-scr-4.png" alt="See announcements relevant to you">
+<img src="building-an-app-for-my-school/varta-scr-5.png" alt="Multi-parameter search">
+</div>
+
+<h2>Running it like a real product</h2>
+
+<p>Once the MVP was done, I had to actually figure out how to run it, which meant thinking about costs, infrastructure, and the unglamorous reality of handling 980 people's data: 900 students across 6th-12th and 80 staff members.</p>
+
+<p>I went back to the WhatsApp groups I was trying to replace and did something I hadn't thought to do earlier: I actually analysed them. I mapped announcement frequency across time windows, and found that</p>
+
+<ul>
+<li>roughly 24 announcements go out per week,</li>
+<li>about 15% have attachments, averaging 5MB,</li>
+<li>almost all of it happens between 6AM and 1PM.</li>
+</ul>
+
+<p>That data shaped everything: the polling frequency, the S3 projections, the instance sizing. Total cost came out to <b>₹235 per user per year</b>. I put this in a proposal and walked the principal through it, which was a new experience, explaining EC2 instance specs to someone who runs a school.</p>
+
+<h2>What I got wrong</h2>
+
+<p>The first four months were nearly wasted. I was building an attendance tracker, an exam manager, a scheduling system, none of which I had promised and none of which the school asked for. The MVP should have been month one, not month five.</p>
+
+<p>I also completely underestimated onboarding. Shipping the app was the easy part; getting teachers who were skeptical to actually use it was a different problem entirely, one I hadn't designed for.</p>
+
+<h2>Where it stands</h2>
+
+<p>The school is on it. Code is on <a href="https://github.com/Aadv1k/Varta">GitHub</a>.</p>
+
+<p>I want to thank my principal who believed in this idea and my father who pushed me to do it.</p>
+
+</article>

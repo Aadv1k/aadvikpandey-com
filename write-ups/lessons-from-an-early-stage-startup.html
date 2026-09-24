@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lessons learnt from an early stage startup</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
+<link rel="manifest" href="../favicon/site.webmanifest">
+<link rel="stylesheet" href="../styles/index.css">
+<script src="../scripts/theme.js"></script>
+
+<nav>
+<a href="../">home</a>
+<a href="../about.html">about</a>
+<a href="./">write-ups</a>
+<button id="themeBtn"></button>
+</nav>
+
+<article>
+<header>
+<h1>Lessons learnt from an early stage startup</h1>
+<time datetime="2025-06-15">2025-06-15</time>
+</header>
+
+<p>In late December 2024, I joined a very early-stage startup with two co-founders, as the primary engineer on the team.  By June 2025 or roughly 7 months later I quit. Below, are the key lessons I derived from the experience of working here, and the mistakes that I made. </p>
+
+<h2>1. Solve it as a user first</h2>
+
+<p class="lesson">If you find a problem, attempt to take off the founder’s goggles and try to genuinely solve it as a user with existing solutions, and do so with good faith. It is a brutal process, as you may learn your problem is already solved, and you will need to go back to the drawing board, but it will save you from months of wasted time, effort, and morale.</p>
+
+<p>The idea came first. We wanted to build a platform that made software development accessible to everyone, and the case for it came from a few minutes spent with existing tools, getting frustrated, and deciding they were too complex for “a normal user”. We had a solution in mind, and went hunting for problems to justify it.</p>
+
+<p>Such questions about product viability and “are we truly solving a real problem?” are often overshadowed by the dreams and hope of building something revolutionary. The early months went into registering a company, buying a domain, and writing documents about culture, policy and vision. Everything looked perfect. It was the Eureka moment we had been waiting for.</p>
+
+<h2>2. Say no early</h2>
+
+<p class="lesson">Startups often operate as a yes-factory. No one really wants to say “No, we can’t do it” or “No, we lack the resources for it.”</p>
+
+<p>This was no different. In retrospect, I got swept away by emotion, and I was honestly afraid that if I were to put my foot down or say “No,” I would be ousted. So I said yes, over and over, and almost every lesson below traces back to one of those yeses.</p>
+
+<h2>3. Become a domain expert, or find one</h2>
+
+<p class="lesson">Either seek out or try to become a domain expert before trying to build something in that space. Without one, you will end up building something completely disconnected from what customers want.</p>
+
+<p>Our product discussions were long and circular: a concept would come up, and we would debate for hours how it should work in the platform. None of us had deep experience in the space we had chosen to build in.</p>
+
+<h2>4. Requirements before code</h2>
+
+<p class="lesson">Development should never begin until and unless the business requirements are clarified. Technical decisions must be shaped by the business requirements.</p>
+
+<p>While the product was still a vague idea, I was asked to prepare a cost analysis, a tech-stack proposal, and an extensive technical specification. I, in my naivety, and fearing that I would be ousted if I refused, agreed, and went all in. I set a bad precedent that I could be given ambiguous requirements and I would figure everything else out and build the product.</p>
+
+<h2>5. New developers need a system, not just a task</h2>
+
+<p class="lesson">A new developer, especially an intern, cannot be expected to produce high quality code the second he touches it. The onus of writing good code should not be left on them. CI pipelines which lint and test each PR, well-defined style guides (or at least an explicit reference to an existing one), and reference implementations that employ the expected error handling and design patterns are among the bare minimum. Development should also be a collaborative process, especially during the initial phases: frequent pair programming sessions and detailed code reviews allow a developer to grow and contribute better.</p>
+
+<p>My school exams were right around the corner, and I had been upfront that I would not be able to dedicate much time during them. We decided to bring on an intern to keep development moving. When his first piece of work came back, it needed a lot of rework, and it was a shock to me, as I had never worked with another developer before.</p>
+
+<p>Any spare time I got between exams went into reviewing and fixing code, and pairing with the intern. It is hard to explain intangible things like technical debt and code quality to people who don’t write code, so the pressure was always to keep work moving rather than slow down and get it right. By then I was writing the requirements, the technical documents, and guiding the intern, a red flag in retrospect about how the work was split, but we chugged along.</p>
+
+<h2>6. Conversations are not requirements</h2>
+
+<p class="lesson">Discussing over coffee what the platform could be, and what features could be present, is very different from the kind of precise requirements actually developing the product requires. The former is dictated by vibes, the latter is directed by the constraints and business requirements.</p>
+
+<p>My exams ended and the intern left. I wanted to do things the right way, so I picked up a copy of “Software Engineering at Google” and read through its technical management portions to be a better lead. Our specifications changed with nearly every conversation, yet the expectation was that development should now begin in full force, because we had been discussing the product for months. We had an abundance of vibes, but not requirements. Truth is, none of us really knew how to map requirements, so we avoided it altogether. I should have put my foot down then.</p>
+
+<h2>7. Attitude takes months to pay off</h2>
+
+<p class="lesson">Hiring people based on the right attitude is an investment that takes a few months to truly vest. If you need work done now, you need people who are skilled and can immediately begin.</p>
+
+<p>We hired two more interns, and chose attitude over skill, since the right attitude can always acquire new skills. But we could only afford interns, and we didn’t have months. As our self-imposed deadline got closer, the process got heavier: daily stand-ups, more pressure, and less room for anyone to learn. I asked for the internships to be wound down, since the interns weren’t gaining much and I wasn’t getting much help, and I asked, again, for the requirements to be written down. Neither happened.</p>
+
+<h2>8. An MVP is one feature</h2>
+
+<p class="lesson">An MVP is not a “less polished” version of your platform, it is one, and absolutely one unique feature of your product that will entice a customer. Stating somethin all-encompassing like “It should be able to build an app” is not a core value proposition.</p>
+
+<p>Code quality and polish were dropped in favour of something, anything, functional by the deadline. I proposed two alternatives: extend the deadline and focus on shipping a quality product, or pivot to a much simpler proof of concept that worked alongside existing tools. Both were turned down.</p>
+
+<h2>9. Leave sooner</h2>
+
+<p>On June 15th, I wished them luck and quit. I should have left much sooner, but the sunk cost fallacy made me stick and try to see it through to the end.</p>
+
+<p>Most of these mistakes were as much mine as anyone’s. I said yes when I should have said no, I started building before any of us knew what we were building, and I stayed long after I knew it wasn’t working.</p>
+</article>
